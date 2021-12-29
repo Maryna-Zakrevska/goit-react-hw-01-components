@@ -2,9 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import user from "./user.json";
-import Profile from "./components/user"
+import user from "./components/task-1/user.json" ;
+import Profile from "./components/task-1/components/user"
 
 ReactDOM.render(
   <React.StrictMode>
@@ -13,8 +12,4 @@ ReactDOM.render(
   document.getElementById("root"),
 );
 
-reportWebVitals();
-
-
-
-ReactDOM.render(<Profile userAvatar={user.avatar} userName={user.username} userTag={user.tag} userLocation={user.location} userFollowers={user.stats.followers} userViews={user.stats.views} userLikes={user.stats.likes} />, document.querySelector("#root"));
+ReactDOM.render(<Profile user={user} />, document.querySelector("#root"));

@@ -1,11 +1,13 @@
 import PropTypes from "prop-types";
 import StatsItem from "./StatsItem";
+import { StatisticsStyled, StatisticsTitle, StatisticsList } from "./Statistics.styled";
+
 export default function Statistics({ title, stats }) {
   return (
-    <section className="statistics">
-      <h2 className="title">{title}</h2>
-      <ul className="stat-list">{stats.map(StatsItem)}</ul>
-    </section>
+    <StatisticsStyled>
+      <StatisticsTitle>{title}</StatisticsTitle>
+      <StatisticsList>{stats.map(StatsItem)}</StatisticsList>
+    </StatisticsStyled>
   );
 }
 

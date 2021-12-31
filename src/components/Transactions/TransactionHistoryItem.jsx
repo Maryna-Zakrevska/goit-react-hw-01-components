@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
+import {TransactionTableRow, TransactionType, TransactionAmount, TransactionCurrency} from "./TransactionHistoryItem.styled";
 export default function TransactionHistoryItem({id, type, amount, currency }) {
     return (
-      <tr key={id}>
-      <td>{type}</td>
-      <td>{amount}</td>
-      <td>{currency}</td>
-    </tr>
+      <TransactionTableRow key={id}>
+      <TransactionType>{type}</TransactionType>
+      <TransactionAmount>{amount}</TransactionAmount>
+      <TransactionCurrency>{currency}</TransactionCurrency>
+    </TransactionTableRow>
     );
   }
   

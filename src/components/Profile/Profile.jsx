@@ -1,30 +1,31 @@
 import PropTypes from "prop-types";
+import {ProfileAllStyled, ProfileDescription, ProfileAvatar, ProfileName, ProfileTag, ProfileLocation, ProfileStats, ProfileStatsLabel, ProfileStatsQuantity, ProfileStatsItem} from "./Profile.styled";
 
 export default function Profile({user:{avatar, username, tag, location, stats:{followers, views, likes}}}) {
     return (
-      <div className="profile">
-        <div className="description">
-          <img src={avatar} alt="User avatar" className="avatar" />
-          <p className="name">{username}</p>
-          <p className="tag">{tag}</p>
-          <p className="location">{location}</p>
-        </div>
+      <ProfileAllStyled>
+        <ProfileDescription>
+          <ProfileAvatar img src={avatar} alt="User avatar"/>
+          <ProfileName>{username}</ProfileName>
+          <ProfileTag>{tag}</ProfileTag>
+          <ProfileLocation>{location}</ProfileLocation>
+        </ProfileDescription>
   
-        <ul className="stats">
-          <li>
-            <span className="label">Followers</span>
-            <span className="quantity">{followers}</span>
-          </li>
-          <li>
-            <span className="label">Views</span>
-            <span className="quantity">{views}</span>
-          </li>
-          <li>
-            <span className="label">Likes</span>
-            <span className="quantity">{likes}</span>
-          </li>
-        </ul>
-      </div>
+        <ProfileStats>
+          <ProfileStatsItem>
+            <ProfileStatsLabel>Followers</ProfileStatsLabel>
+            <ProfileStatsQuantity>{followers}</ProfileStatsQuantity>
+          </ProfileStatsItem>
+          <ProfileStatsItem>
+            <ProfileStatsLabel>Views</ProfileStatsLabel>
+            <ProfileStatsQuantity>{views}</ProfileStatsQuantity>
+          </ProfileStatsItem>
+          <ProfileStatsItem>
+            <ProfileStatsLabel>Likes</ProfileStatsLabel>
+            <ProfileStatsQuantity>{likes}</ProfileStatsQuantity>
+          </ProfileStatsItem>
+        </ProfileStats>
+      </ProfileAllStyled>
     );
   }
 

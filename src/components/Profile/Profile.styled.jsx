@@ -9,16 +9,17 @@ const ProfileAllStyled = styled.div`
 `;
 
 const ProfileDescription = styled.div`
-  padding: 40px 16px;
+  padding: 20px 12px;
   text-align: center;
 `;
 
 const ProfileAvatar = styled.img`
 display: block;
-width: 64%;
+width: 90%;
 height: auto;
-margin: 0 auto 32px;
+margin: 0 auto 20px;
 border-radius: 50%;
+border: outset 6px rgba(86, 181, 184, 0.2);
 `;
 
 const ProfileName = styled.p`
@@ -67,9 +68,13 @@ const ProfileStatsItem = styled.li`
   gap: 8px;
   padding: 24px 20px;
   background-color: #f3f6f9;
-  transition: var(--time) var(--cubic) transform;
   box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
   border-radius: 4px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1) transform;
+  :focus-within,
+  :hover {
+    transform: scale(1.03);
+  }
 `;
 
 export {ProfileAllStyled, ProfileDescription, ProfileAvatar, ProfileName, ProfileTag, ProfileLocation, ProfileStats, ProfileStatsLabel, ProfileStatsQuantity, ProfileStatsItem};

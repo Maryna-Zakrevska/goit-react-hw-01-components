@@ -9,7 +9,7 @@ const FriendListItemStyled = styled.li`
   background-color: #fff;
   border-radius: 4px;
   box-shadow: 1px 1px 2px 1px #a5a5a5;
-  transition: var(--time) var(--cubic) transform;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1) transform;
   :focus-within,
   :hover {
     transform: scale(1.03);
